@@ -12,6 +12,11 @@ class NavigationProvider with ChangeNotifier{
 
   String selectedPage = "home";
 
+  setSite(sS){
+    selectedPage = sS;
+    notifyListeners();
+  }
+
   Widget get selectedSite {
     return listOfSites[selectedPage];
   }

@@ -2,7 +2,19 @@ import 'package:berichtsheft_app/provider/navigation_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class Web extends StatelessWidget {
+class Web extends StatefulWidget {
+  @override
+  _WebState createState() => _WebState();
+}
+
+class _WebState extends State<Web> {
+
+  @override
+  void didUpdateWidget(Web oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    print("Widget is updated");
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -127,14 +139,14 @@ class BottomNavBar extends StatelessWidget{
             children: <Widget>[
               BottomNavBarButton("Home", () {
                 print("test");
-                navigate.selectedPage = "create_new";
+                navigate.setSite("create_new");
               }),
               Expanded(child: Container(),),
-              BottomNavBarButton("New", () => navigate.selectedPage = "create_new"),
+              BottomNavBarButton("New", () => navigate.setSite("create_new")),
               SizedBox(width: 5),
-              BottomNavBarButton("Login", ()=> navigate.selectedPage = "login"),
+              BottomNavBarButton("Login", ()=> navigate.setSite("login")),
               SizedBox(width: 15),
-              BottomNavBarButton("Register", () => navigate.selectedPage = "register"),
+              BottomNavBarButton("Register", () => navigate.setSite("register")),
             ],
           ),
         ),
