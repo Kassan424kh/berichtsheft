@@ -1,7 +1,9 @@
-import 'package:berichtsheft_app/Components/home_page.dart';
+import 'package:berichtsheft_app/Components/Sites/create_new_site.dart';
+import 'package:berichtsheft_app/Components/Sites/home_site.dart';
+import 'package:berichtsheft_app/Components/Sites/login_site.dart';
+import 'package:berichtsheft_app/Components/Sites/register_site.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:html' as html;
-
 
 class NavigationProvider with ChangeNotifier {
   final Map<String, Widget> listOfSites = {
