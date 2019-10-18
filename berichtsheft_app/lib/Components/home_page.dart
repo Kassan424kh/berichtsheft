@@ -3,6 +3,7 @@ import 'package:berichtsheft_app/provider/styling_provider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'dart:html' as html;
 
 class Web extends StatefulWidget {
   @override
@@ -14,6 +15,13 @@ class _WebState extends State<Web> {
   final _scrollToController = ScrollController();
 
   @override
+  void initState() {
+    super.initState();
+    html.window.history.pushState("", "home", "/home");
+
+  }
+
+  @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     final navigate = Provider.of<NavigationProvider>(context);
@@ -23,6 +31,7 @@ class _WebState extends State<Web> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    final navigate = Provider.of<NavigationProvider>(context);
     final styling = Provider.of<StylingProvider>(context);
     if (_scrollToController.hasClients)
       _scrollToController.animateTo(
@@ -35,7 +44,6 @@ class _WebState extends State<Web> {
         styling.showBottomNavBar(true);
       },
       onPointerExit: (e) {
-        print(e);
         styling.showBottomNavBar(false);
       },
       child: Scaffold(
@@ -47,12 +55,7 @@ class _WebState extends State<Web> {
               physics: NeverScrollableScrollPhysics(),
               scrollDirection: Axis.horizontal,
               controller: _scrollToController,
-              children: <Widget>[
-                HomeSite(),
-                CreateNew(),
-                LoginSite(),
-                RegisterSite(),
-              ],
+              children: navigate.listOfSites.values.map((e) => e).toList(),
             ),
             BottomNavBar(),
           ]),
