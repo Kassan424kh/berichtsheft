@@ -1,16 +1,20 @@
 # berichtsheft_app
 
-A new Flutter project.
+A new Project to write berichtshefte online saved, used beatiful and light userenterface.
 
-## Getting Started
+## Install the Project
+```BASH
+▶ $ flutter channel master
+▶ $ flutter upgrade
+▶ $ flutter config --enable-web
+```
 
-This project is a starting point for a Flutter application.
+## Start the Project
+```BASH
+▶ $ flutter run -d (chrome<AS Example>)
+```
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Build release of the project
+```BASH
+▶ $ flutter build web
+```
