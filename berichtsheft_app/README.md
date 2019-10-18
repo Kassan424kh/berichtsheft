@@ -1,6 +1,6 @@
 # berichtsheft_app
 
-A new Project to write berichtshefte 
+A new Project to write berichtshefte online saved, used beatiful and light userenterface.
 
 ## Install the Project
 ```BASH
