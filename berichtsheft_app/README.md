@@ -4,7 +4,7 @@ A new Project to write berichtshefte online saved, used beatiful and light usere
 
 ## Install the Project
 ```BASH
-▶ $ flutter channel maste
+▶ $ flutter channel master
 ▶ $ flutter upgrade
 ▶ $ flutter config --enable-web
 ```
@@ -12,4 +12,9 @@ A new Project to write berichtshefte online saved, used beatiful and light usere
 ## Start the Project
 ```BASH
 ▶ $ flutter run -d (chrome<AS Example>)
+```
+
+## Build release of the project
+```BASH
+▶ $ flutter build web
 ```
